@@ -1,0 +1,88 @@
+{
+  "name": "@source4society/dynamic-sagas-and-reducers",
+  "version": "1.0.0",
+  "description": "Everything you need to inject reducers and sagas for your components",
+  "main": "lib/index.js",
+  "repository": "git@github.com:source4societyorg/dynamic-sagas-and-reducers.git",
+  "author": "Source 4 Society <accounts@source4society.org>",
+  "license": "AGPL-3.0",
+  "private": false,
+  "scripts": {
+    "test": "eslint ./src/*.js --ignore-path .gitignore && jest --coverage",
+    "build": "babel src/*.js --minified --out-file lib/index.js",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@source4society/scepter-utility-lib": "^3.0.0",
+    "history": "^4.7.2",
+    "lodash": "4.17.5",
+    "react": "^15.6.2",
+    "redux-immutable": "^4.0.0"
+  },
+  "devDependencies": {
+    "@source4society/scepter-app-utilities": "^2.1.1",
+    "babel-cli": "6.24.1",
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "7.1.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dynamic-import-node": "1.0.2",
+    "babel-plugin-react-intl": "2.3.1",
+    "babel-plugin-react-transform": "2.0.2",
+    "babel-plugin-styled-components": "1.1.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "6.23.0",
+    "babel-plugin-transform-react-inline-elements": "6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.5",
+    "babel-preset-env": "1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-polyfill": "6.23.0",
+    "exports-loader": "^0.6.4",
+    "enzyme": "^2.8.2",
+    "eslint": "3.19.0",
+    "hoist-non-react-statics": "2.1.1",
+    "eslint-config-airbnb": "15.0.1",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jest": "^21.5.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "immutable": "^3.8.2",
+    "jest-cli": "^22.0.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-router-dom": "^4.2.2",
+    "redux-saga": "^0.16.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "html",
+      "cobertura"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 99,
+        "branches": 99,
+        "functions": 99,
+        "lines": 99
+      }
+    },
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test-bundler.js",
+    "testRegex": "tests/.*\\.test\\.js$"
+  }
+}
